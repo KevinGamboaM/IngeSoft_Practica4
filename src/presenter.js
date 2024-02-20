@@ -1,4 +1,4 @@
-import saludar from "./Saludar";
+import saludar, { horario } from "./Saludar";
 
 const nombre_input = document.querySelector("#nombre");
 const edad_input = document.querySelector("#edad");
@@ -13,13 +13,15 @@ form.addEventListener("submit", (event) => {
   const genero = genero_input.value;
   const edad = Number.parseInt(edad_input.value);
   if(edad>=30 && genero == 'masculino'){
-    div.innerHTML = "<p> Hola Sr. " + saludar(nombre) + "</p>";
+    div.innerHTML = "<p>"+ horario() + " Sr. " + saludar(nombre) + "</p>";
   }else if(genero == 'masculino'){
-    div.innerHTML = "<p> Hola querido amigo " + saludar(nombre) + "</p>";
+    div.innerHTML = "<p>"+ horario() + "querido amigo " + saludar(nombre) + "</p>";
   }if(edad>=30 && genero == 'femenino'){
-    div.innerHTML = "<p> Hola Srta. " + saludar(nombre) + "</p>";
+    div.innerHTML = "<p>"+ horario() + " Srta. " + saludar(nombre) + "</p>";
   }else if(genero == 'femenino'){
-    div.innerHTML = "<p> Hola querido amiga " + saludar(nombre) + "</p>";
+    div.innerHTML = "<p>"+ horario() + " querida amiga " + saludar(nombre) + "</p>";
   }
+
+
 
 });
